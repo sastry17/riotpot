@@ -22,7 +22,7 @@ var websocketConn *websocket.Conn
 var websocketMutex *sync.Mutex
 var tlsConfig *tls.Config
 
-func trudy() {
+func Trudy() {
 	var tcpport string
 	var tlsport string
 

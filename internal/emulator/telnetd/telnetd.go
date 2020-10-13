@@ -25,7 +25,7 @@ func FloatToString(input_num float64) string {
 func TelnetServer() {
 
 	//create your file with desired read/write permissions
-	f, err := os.OpenFile("C:\\AAU_NetSec\\riotpot\\logger\\honey-telnet.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	f, err := os.OpenFile("/home/sastry17/work/src/github.com/sastry17/riotpot/logger/honey-telnet.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
