@@ -16,11 +16,12 @@ func main() {
 	if args[1] == "--all" {
 
 		wg.Add(1)
-		telnet_serv()
+		go telnet_serv()
 		go http_serv()
 		fmt.Println("Telnet and HTTP Server Started")
 		go sshd.SSHServer()  //Starts SSH Server
-		start_proxy()
+		fmt.Println("SSH Server Started")
+		go start_proxy()
    		wg.Wait()
 
 	}

@@ -36,9 +36,9 @@ func TelnetServer() {
 	//set output of logs to f
 	log.SetOutput(f)
 
-	server, err := net.Listen("tcp", ":"+strconv.Itoa(PORT))
+	server, _ := net.Listen("tcp", ":"+strconv.Itoa(PORT))
 	if server == nil {
-		fmt.Println(err)
+		//fmt.Println(err)
 		panic("couldn't start listening: ")
 		log.Println("couldn't start listening: ")
 	}

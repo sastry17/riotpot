@@ -12,3 +12,7 @@
 2020/10/15 14:21:03 pass : test
 2020/10/15 14:21:05 CMD Sent by client: 
 2020/10/15 14:22:50 CMD Sent by client: exit
+2020/10/15 14:35:02 GET request from 127.0.0.1:60464. /
+2020/10/15 14:35:14 POST request from 127.0.0.1:60464. /
+2020/10/15 14:35:14 Username: test
+2020/10/15 14:35:14 Password: test

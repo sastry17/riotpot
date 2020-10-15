@@ -28,7 +28,7 @@ func SSHServer() {
 	log.SetOutput(f)
 
 	ssh.Handle(func(s ssh.Session) {
-		cmd := exec.Command("./fakeshell")
+		cmd := exec.Command("go ./internal/emulator/fakeshell/fakshell.go")
 		ptyReq, winCh, isPty := s.Pty()
 		if isPty {
 			cmd.Env = append(cmd.Env, fmt.Sprintf("TERM=%s", ptyReq.Term))
