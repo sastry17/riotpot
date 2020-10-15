@@ -25,7 +25,7 @@ func FloatToString(input_num float64) string {
 func TelnetServer() {
 
 	//create your file with desired read/write permissions
-	f, err := os.OpenFile("/home/sastry17/work/src/github.com/sastry17/riotpot/logger/honey-telnet.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	f, err := os.OpenFile("./logger/honey-telnet.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0777)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -36,8 +36,9 @@ func TelnetServer() {
 	//set output of logs to f
 	log.SetOutput(f)
 
-	server, _ := net.Listen("tcp", ":"+strconv.Itoa(PORT))
+	server, err := net.Listen("tcp", ":"+strconv.Itoa(PORT))
 	if server == nil {
+		fmt.Println(err)
 		panic("couldn't start listening: ")
 		log.Println("couldn't start listening: ")
 	}

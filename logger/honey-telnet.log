@@ -1,26 +1,14 @@
-2020/10/12 12:09:28 CLIENT OPENED CONNECTION 1: [::1]:23 <-> [::1]:14249
-2020/10/12 12:09:28 Sending MOTD to client
-2020/10/12 12:09:36 user : tetst
+2020/10/15 14:17:39 CLIENT OPENED CONNECTION 1: [::1]:2323 <-> [::1]:59102
+2020/10/15 14:17:39 Sending MOTD to client
+2020/10/15 14:17:48 user : test
  
-2020/10/12 12:09:36 pass : test
-2020/10/12 12:09:39 CMD Sent by client: 
-2020/10/12 12:09:43 CMD Sent by client: ls
-2020/10/12 12:09:50 CMD Sent by client: deleet
-2020/10/12 12:09:55 CMD Sent by client: detele
-2020/10/12 12:09:59 CMD Sent by client: exit
-2020/10/12 12:18:51 CLIENT OPENED CONNECTION 1: [::1]:23 <-> [::1]:21835
-2020/10/12 12:18:51 Sending MOTD to client
-2020/10/12 12:18:56 user : test
+2020/10/15 14:17:48 pass : test
+2020/10/15 14:17:50 CMD Sent by client: 
+2020/10/15 14:17:54 CMD Sent by client: exit
+2020/10/15 14:20:58 CLIENT OPENED CONNECTION 1: [::1]:23 <-> [::1]:51768
+2020/10/15 14:20:58 Sending MOTD to client
+2020/10/15 14:21:03 user : test
  
-2020/10/12 12:18:56 pass : test
-2020/10/12 12:18:58 CMD Sent by client: 
-2020/10/12 12:19:05 CMD Sent by client: tesyt
-2020/10/12 12:19:08 CMD Sent by client: exit
-2020/10/12 12:37:19 GET request from [::1]:22047. /
-2020/10/12 12:37:20 GET request from [::1]:22047. /favicon.ico
-2020/10/12 12:44:36 GET request from [::1]:22117. /
-2020/10/12 12:44:36 GET request from [::1]:22117. /favicon.ico
-2020/10/12 12:44:42 CLIENT OPENED CONNECTION 1: [::1]:23 <-> [::1]:22119
-2020/10/12 12:44:42 Sending MOTD to client
-2020/10/12 12:44:52 GET request from [::1]:22117. /
-2020/10/12 12:44:52 GET request from [::1]:22117. /favicon.ico
+2020/10/15 14:21:03 pass : test
+2020/10/15 14:21:05 CMD Sent by client: 
+2020/10/15 14:22:50 CMD Sent by client: exit
