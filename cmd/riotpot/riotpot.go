@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/sastry17/riotpot/internal/emulator/httpd"
+	"github.com/sastry17/riotpot/internal/emulator/httpsd"
 	"github.com/sastry17/riotpot/internal/emulator/sshd"
 	"github.com/sastry17/riotpot/internal/emulator/telnetd"
 	"sync"
@@ -38,4 +39,8 @@ func http_serv() {
 
 func start_proxy() {
 	trudy.Trudy() //start trudy proxy
+}
+
+func https_serv(){
+	httpsd.HttpsServer() //starts HTTPS
 }

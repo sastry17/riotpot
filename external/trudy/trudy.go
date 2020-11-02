@@ -32,7 +32,7 @@ func Trudy() {
 	var showConnectionAttempts bool
 
 	flag.StringVar(&tcpport, "tcp", "6666", "Listening port for non-TLS connections.")
-	flag.StringVar(&tlsport, "tls", "6443", "Listening port for TLS connections.")
+	flag.StringVar(&tlsport, "tls", "1883", "Listening port for TLS connections.")
 	flag.StringVar(&x509, "x509", "./certificate/trudy.cer", "Path to x509 certificate that will be presented for TLS connection.")
 	flag.StringVar(&key, "key", "./certificate/trudy.key", "Path to the corresponding private key for the specified x509 certificate")
 	flag.BoolVar(&showConnectionAttempts, "show", true, "Show connection open and close messages")
