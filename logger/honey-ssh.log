@@ -18,3 +18,13 @@
 2020/10/15 14:41:44 [::1]:51868
 2020/10/15 14:41:44 SSH-2.0-OpenSSH_8.3p1 Debian-1
 2020/10/15 15:07:52 starting ssh server on port 2222...
+2020/11/02 13:53:13 starting ssh server on port 2222...
+2020/11/02 16:56:07 starting ssh server on port 2222...
+2020/11/02 16:56:33 starting ssh server on port 2222...
+2020/11/02 16:56:39 CLIENT OPENED CONNECTION 1: [::1]:23 <-> [::1]:33972
+2020/11/02 16:56:39 Sending MOTD to client
+2020/11/02 16:56:46 user : ÿôÿý
+ 
+2020/11/02 16:56:46 pass : 
+2020/11/02 16:56:47 CMD Sent by client: 
+2020/11/02 16:56:49 CMD Sent by client: exit

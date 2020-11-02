@@ -2,19 +2,18 @@ package main
 
 import (
 	"fmt"
+	"github.com/sastry17/riotpot/external/trudy"
 	"github.com/sastry17/riotpot/internal/emulator/httpd"
 	"github.com/sastry17/riotpot/internal/emulator/httpsd"
 	"github.com/sastry17/riotpot/internal/emulator/sshd"
 	"github.com/sastry17/riotpot/internal/emulator/telnetd"
 	"sync"
-	"github.com/sastry17/riotpot/external/trudy"
-	"os"
 )
 var wg sync.WaitGroup
 func main() {
 
-	args := os.Args
-	if args[1] == "--all" {
+	//args := os.Args
+	//if args[1] == "--all" {
 
 		wg.Add(1)
 		go telnet_serv()
@@ -22,10 +21,10 @@ func main() {
 		fmt.Println("Telnet and HTTP Server Started")
 		go sshd.SSHServer()  //Starts SSH Server
 		fmt.Println("SSH Server Started")
-		go start_proxy()
+		//go start_proxy()
    		wg.Wait()
 
-	}
+	//}
 
 }
 
