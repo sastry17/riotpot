@@ -11,6 +11,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	_ "github.com/sastry17/riotpot/external/mqttclient"
 )
 
 const PORT = 23
@@ -90,11 +91,40 @@ func ping(command string, client net.Conn) {
 
 }
 
+func pubMessage(attIP string, honIP string, attPort int, honPort int, protocol string, packet string){
+
+	var msg = "{" +
+		"attIP:" + attIP +
+		"honIP:" + honIP +
+		"attPort:" + string(attPort) +
+		"honPort:" + string(honPort) +
+		"protocol:" + protocol +
+		"packet:"  + packet +
+		"}"
+
+	fmt.Println(msg)
+
+}
+
+
+
+
 func handleConn(client net.Conn) {
 	ena := "nope"
 	conft := "nope"
 	b := bufio.NewReader(client)
 	c := bufio.NewReader(client)
+	var attIP = client.RemoteAddr().String()
+	var honIP = client.LocalAddr().String()
+	var attPort = 2323
+	var honPort = PORT
+	var protocol = "Telnet"
+
+
+
+
+
+
 	motd := "This device is for authorized personnel only. \n" +
 		"If you have not been provided with permission to \n" +
 		"access this device - disconnect at once. \n" +
@@ -125,10 +155,15 @@ func handleConn(client net.Conn) {
 		if cmd == "ena" || cmd == "enab" || cmd == "enabl" || cmd == "enable" || cmd == "sudo su" {
 			ena = "yes"
 			fmt.Println("ENA ", ena)
-		}
+			var packet = cmd
+			pubMessage(attIP,honIP,attPort,honPort,protocol,packet)
+
+			}
 		if cmd == "configuration terminal" || cmd == "configure terminal" || cmd == "conf termi" || cmd == "conf t" {
 			conft = "yes"
 			fmt.Println("Confetti", conft)
+			var packet = cmd
+			pubMessage(attIP,honIP,attPort,honPort,protocol,packet)
 		}
 
 		if ena == "yes" && conft == "nope" {
@@ -137,6 +172,8 @@ func handleConn(client net.Conn) {
 			stringArray1 := []string{hostname, "#"}
 			s1 := strings.Join(stringArray1, " ")
 			client.Write([]byte(s1))
+			var packet = cmd
+			pubMessage(attIP,honIP,attPort,honPort,protocol,packet)
 		}
 
 		if conft == "nope" && ena == "nope" {
@@ -145,6 +182,8 @@ func handleConn(client net.Conn) {
 			s3 := strings.Join(stringArray3, " ")
 			client.Write([]byte(s3))
 			ping(cmd, client)
+
+			pubMessage(attIP,honIP,attPort,honPort,protocol,s3)
 		}
 
 		if conft == "yes" && ena == "nope" {
@@ -171,9 +210,11 @@ func handleConn(client net.Conn) {
 			client.Close()
 		}
 		if cmd == "exit" && ena == "yes" {
+			var packet = cmd
 			ena = "nope"
 			conft = "nope"
 			cmd = ""
+			pubMessage(attIP,honIP,attPort,honPort,protocol,packet)
 		}
 
 	}

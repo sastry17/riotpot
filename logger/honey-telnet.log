@@ -1,0 +1,12 @@
+2020/11/06 10:20:49 CLIENT OPENED CONNECTION 1: [::1]:23 <-> [::1]:60576
+2020/11/06 10:20:49 Sending MOTD to client
+2020/11/06 10:20:53 user : 
+ 
+2020/11/06 10:20:53 pass : 
+2020/11/06 10:20:57 CMD Sent by client: 
+2020/11/06 14:05:20 CLIENT OPENED CONNECTION 1: [::1]:23 <-> [::1]:60618
+2020/11/06 14:05:20 Sending MOTD to client
+2020/11/06 14:05:24 user : test
+ 
+2020/11/06 14:05:24 pass : test
+2020/11/06 14:05:25 CMD Sent by client: 

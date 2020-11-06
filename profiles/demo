@@ -1,0 +1,6 @@
+[protocols]
+SSH = 0
+TELNET = 0
+MQTT = 0
+HTTP = 0
+HTTP_Content = ./internal/httpd/static/demo

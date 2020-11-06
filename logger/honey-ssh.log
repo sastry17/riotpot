@@ -28,3 +28,13 @@
 2020/11/02 16:56:46 pass : 
 2020/11/02 16:56:47 CMD Sent by client: 
 2020/11/02 16:56:49 CMD Sent by client: exit
+2020/11/06 10:20:29 starting ssh server on port 2222...
+2020/11/06 11:05:13 starting ssh server on port 2222...
+2020/11/06 11:21:59 starting ssh server on port 2222...
+2020/11/06 11:22:06 CLIENT OPENED CONNECTION 1: [::1]:23 <-> [::1]:60596
+2020/11/06 11:22:06 Sending MOTD to client
+2020/11/06 11:22:10 user : test
+ 
+2020/11/06 11:22:10 pass : test
+2020/11/06 11:22:13 CMD Sent by client: 
+2020/11/06 14:05:06 starting ssh server on port 2222...
