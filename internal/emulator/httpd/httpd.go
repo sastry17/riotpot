@@ -19,8 +19,8 @@ func logRequest(response http.ResponseWriter, request *http.Request) {
 	username := request.PostFormValue("username")
 	password := request.PostFormValue("pass")
 	if username != "" || password != "" {
-		log.Println("Username: " + username)
-		log.Println("Password: " + password)
+		fmt.Println("Username: " + username)
+		fmt.Println("Password: " + password)
 	}
 
 	fmt.Fprint(response, "<html><body>")

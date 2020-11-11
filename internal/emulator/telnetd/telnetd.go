@@ -1,9 +1,10 @@
 package telnetd
 
-
 import (
 	"bufio"
 	"fmt"
+	"github.com/sastry17/riotpot/external/mqttclient"
+	_ "github.com/sastry17/riotpot/external/mqttclient"
 	"log"
 	"math/rand"
 	"net"
@@ -11,7 +12,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	_ "github.com/sastry17/riotpot/external/mqttclient"
 )
 
 const PORT = 23
@@ -91,33 +91,39 @@ func ping(command string, client net.Conn) {
 
 }
 
-func pubMessage(attIP string, honIP string, attPort int, honPort int, protocol string, packet string){
+func pubMessage(attIP string, honIP string, attPort string, honPort string, protocol string, packet string){
 
 	var msg = "{" +
-		"attIP:" + attIP +
-		"honIP:" + honIP +
-		"attPort:" + string(attPort) +
-		"honPort:" + string(honPort) +
-		"protocol:" + protocol +
-		"packet:"  + packet +
+		"attIP:" + attIP +","+"\n"+
+		"honIP:" + honIP +","+"\n"+
+		"attPort:" + attPort +","+"\n"+
+		"honPort:" + honPort +","+"\n"+
+		"protocol:" + protocol +","+"\n"+
+		"packet:"  + packet +"\n"+
 		"}"
 
 	fmt.Println(msg)
+	go mqttclient.Publisher(msg)
+	fmt.Println("Published")
+
 
 }
 
-
-
+var packet = ""
 
 func handleConn(client net.Conn) {
 	ena := "nope"
 	conft := "nope"
 	b := bufio.NewReader(client)
 	c := bufio.NewReader(client)
-	var attIP = client.RemoteAddr().String()
-	var honIP = client.LocalAddr().String()
-	var attPort = 2323
-	var honPort = PORT
+	var RemoteHost = client.RemoteAddr().String()
+	var attHost = strings.Split(RemoteHost,":")
+	var attIP = attHost[0]
+	var localHost = client.LocalAddr().String()
+	var honHost = strings.Split(localHost,":")
+	var honIP = honHost[0]
+	var attPort = attHost[1]
+	var honPort = honHost[1]
 	var protocol = "Telnet"
 
 
@@ -155,14 +161,14 @@ func handleConn(client net.Conn) {
 		if cmd == "ena" || cmd == "enab" || cmd == "enabl" || cmd == "enable" || cmd == "sudo su" {
 			ena = "yes"
 			fmt.Println("ENA ", ena)
-			var packet = cmd
+			packet = cmd
 			pubMessage(attIP,honIP,attPort,honPort,protocol,packet)
 
 			}
 		if cmd == "configuration terminal" || cmd == "configure terminal" || cmd == "conf termi" || cmd == "conf t" {
 			conft = "yes"
 			fmt.Println("Confetti", conft)
-			var packet = cmd
+			packet = cmd
 			pubMessage(attIP,honIP,attPort,honPort,protocol,packet)
 		}
 
@@ -172,7 +178,7 @@ func handleConn(client net.Conn) {
 			stringArray1 := []string{hostname, "#"}
 			s1 := strings.Join(stringArray1, " ")
 			client.Write([]byte(s1))
-			var packet = cmd
+			packet = cmd
 			pubMessage(attIP,honIP,attPort,honPort,protocol,packet)
 		}
 

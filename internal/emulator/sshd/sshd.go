@@ -2,6 +2,7 @@ package sshd
 
 import (
 	"fmt"
+	"github.com/sastry17/riotpot/external/mqttclient"
 	"io"
 	"log"
 	"os"
@@ -16,7 +17,30 @@ import (
 func setWinsize(f *os.File, w, h int) {
 	syscall.Syscall(syscall.SYS_IOCTL, f.Fd(), uintptr(syscall.TIOCSWINSZ),
 		uintptr(unsafe.Pointer(&struct{ h, w, x, y uint16 }{uint16(h), uint16(w), 0, 0})))
+
 }
+
+
+func pubMessage(attIP string, honIP string, attPort string, honPort string, protocol string, packet string){
+
+	var msg = "{" +
+		"attIP:" + attIP +","+"\n"+
+		"honIP:" + honIP +","+"\n"+
+		"attPort:" + attPort +","+"\n"+
+		"honPort:" + honPort +","+"\n"+
+		"protocol:" + protocol +","+"\n"+
+		"packet:"  + packet +"\n"+
+		"}"
+
+	fmt.Println(msg)
+	go mqttclient.Publisher(msg)
+	fmt.Println("Published")
+
+}
+
+var packet = ""
+
+
 
 func SSHServer() {
 	f, err := os.OpenFile("./logger/honey-ssh.log", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
@@ -28,7 +52,9 @@ func SSHServer() {
 	log.SetOutput(f)
 
 	ssh.Handle(func(s ssh.Session) {
-		cmd := exec.Command("go ./internal/emulator/fakeshell/fakshell.go")
+		cmd := exec.Command("go ./internal/emulator/fakeshell/fakeshell.go")
+		//cmd := fakeshell.FakeShell()
+
 		ptyReq, winCh, isPty := s.Pty()
 		if isPty {
 			cmd.Env = append(cmd.Env, fmt.Sprintf("TERM=%s", ptyReq.Term))

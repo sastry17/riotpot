@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mosquitto_pub --cafile ca.crt --cert client.crt --key client.key -d -h vps-12e334c0 -p 8883 -t test -m "final test"

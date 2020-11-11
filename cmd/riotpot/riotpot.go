@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	//_ "github.com/sastry17/riotpot/external/mqttclient"
 	"github.com/sastry17/riotpot/external/trudy"
 	"github.com/sastry17/riotpot/internal/emulator/httpd"
 	"github.com/sastry17/riotpot/internal/emulator/httpsd"
@@ -16,12 +17,14 @@ func main() {
 	//if args[1] == "--all" {
 
 		wg.Add(1)
-		go telnet_serv()
+		//mqttclient.Publisher("RIoTPot")
+		//go telnet_serv()
 		go http_serv()
 		fmt.Println("Telnet and HTTP Server Started")
 		go sshd.SSHServer()  //Starts SSH Server
 		fmt.Println("SSH Server Started")
 		//go start_proxy()
+
    		wg.Wait()
 
 	//}

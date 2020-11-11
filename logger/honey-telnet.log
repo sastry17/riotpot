@@ -10,3 +10,93 @@
  
 2020/11/06 14:05:24 pass : test
 2020/11/06 14:05:25 CMD Sent by client: 
+2020/11/11 10:35:51 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38954
+2020/11/11 10:35:51 Sending MOTD to client
+2020/11/11 10:35:55 user : riot
+ 
+2020/11/11 10:35:55 pass : riot
+2020/11/11 10:35:56 CMD Sent by client: 
+2020/11/11 10:35:58 CMD Sent by client: 
+2020/11/11 10:36:03 CMD Sent by client: exit
+2020/11/11 10:38:49 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38956
+2020/11/11 10:38:49 Sending MOTD to client
+2020/11/11 10:38:54 user : riot
+ 
+2020/11/11 10:38:54 pass : rio
+2020/11/11 10:41:25 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38960
+2020/11/11 10:41:25 Sending MOTD to client
+2020/11/11 10:41:29 user : riot
+ 
+2020/11/11 10:41:29 pass : riot
+2020/11/11 10:47:42 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38964
+2020/11/11 10:47:42 Sending MOTD to client
+2020/11/11 10:47:47 user : riot
+ 
+2020/11/11 10:47:47 pass : riot
+2020/11/11 10:49:38 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38968
+2020/11/11 10:49:38 Sending MOTD to client
+2020/11/11 10:49:42 user : rest
+ 
+2020/11/11 10:49:42 pass : rest
+2020/11/11 10:52:40 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38972
+2020/11/11 10:52:40 Sending MOTD to client
+2020/11/11 10:52:44 user : rest
+ 
+2020/11/11 10:52:44 pass : rest
+2020/11/11 11:10:30 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38974
+2020/11/11 11:10:30 Sending MOTD to client
+2020/11/11 11:10:35 user : riot
+ 
+2020/11/11 11:10:35 pass : riot
+2020/11/11 11:11:45 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38976
+2020/11/11 11:11:45 Sending MOTD to client
+2020/11/11 11:11:49 user : riot
+ 
+2020/11/11 11:11:49 pass : riot
+2020/11/11 11:11:50 network Error : dial tcp: address tcp/âŠ³: unknown port
+2020/11/11 11:14:21 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38978
+2020/11/11 11:14:21 Sending MOTD to client
+2020/11/11 11:14:26 user : riot
+ 
+2020/11/11 11:14:26 pass : riot
+2020/11/11 11:15:06 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38980
+2020/11/11 11:15:06 Sending MOTD to client
+2020/11/11 11:15:10 user : test
+ 
+2020/11/11 11:15:10 pass : test
+2020/11/11 11:15:11 network Error : dial tcp: address tcp/âŠ³: unknown port
+2020/11/11 11:17:03 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38984
+2020/11/11 11:17:03 Sending MOTD to client
+2020/11/11 11:17:07 user : test
+ 
+2020/11/11 11:17:07 pass : test
+2020/11/11 11:17:08 network Error : dial tcp: address tcp/âŠ³: unknown port
+2020/11/11 11:24:26 network Error : dial tcp: lookup vps-12e334c0 on 192.168.94.2:53: no such host
+2020/11/11 11:29:31 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:38996
+2020/11/11 11:29:31 Sending MOTD to client
+2020/11/11 11:29:36 user : riot
+ 
+2020/11/11 11:29:36 pass : riot
+2020/11/11 11:29:38 CMD Sent by client: 
+2020/11/11 11:29:45 CMD Sent by client: ls
+2020/11/11 11:29:48 CMD Sent by client: hello
+2020/11/11 11:29:56 CMD Sent by client: this is a test
+2020/11/11 13:38:18 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:57802
+2020/11/11 13:38:18 Sending MOTD to client
+2020/11/11 13:38:24 user : riot
+ 
+2020/11/11 13:38:24 pass : riot
+2020/11/11 13:38:25 CMD Sent by client: 
+2020/11/11 14:52:20 CLIENT OPENED CONNECTION 1: 127.0.0.1:23 <-> 127.0.0.1:57826
+2020/11/11 14:52:20 Sending MOTD to client
+2020/11/11 14:52:24 user : test
+ 
+2020/11/11 14:52:24 pass : test
+2020/11/11 14:52:26 CMD Sent by client: 
+2020/11/11 14:53:17 CMD Sent by client: ÿôÿýexit
+2020/11/11 14:53:18 CMD Sent by client: 
+2020/11/11 14:53:22 CMD Sent by client: exit
+2020/11/11 15:00:39 127.0.0.1:50176
+2020/11/11 15:00:39 SSH-2.0-OpenSSH_8.3p1 Debian-1
+2020/11/11 15:05:32 127.0.0.1:50180
+2020/11/11 15:05:32 SSH-2.0-OpenSSH_8.3p1 Debian-1
